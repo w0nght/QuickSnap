@@ -28,6 +28,23 @@ namespace CardGames
                 //change it to start the game
                 myGame.Start();
 			}
+            if (myGame.IsStarted)
+            {
+                if (SwinGame.KeyTyped(KeyCode.vk_LSHIFT) &&
+                    SwinGame.KeyTyped(KeyCode.vk_RSHIFT))
+                {
+                    //Add sound effects
+                    //SwinGame.LoadSoundEffect("Slap");
+                }
+                else if (SwinGame.KeyTyped(KeyCode.vk_LSHIFT))
+                {
+                    myGame.PlayerHit(0);
+                }
+                else if (SwinGame.KeyTyped(KeyCode.vk_RSHIFT))
+                {
+                    myGame.PlayerHit(1);
+                }
+            }
 		}
 
 		/// <summary>
